@@ -102,7 +102,7 @@ const resetData = async (req, res, next) => {
   res.json({ statusCode: "Successfully made utility function call!" });
 };
 
-const updateStatus = async (req, res, next) => {
+const updateStatus = async (req, res) => {
   const clientsCollection = mongoClient.db("teamregex").collection("clients");
 
   const response = {};
