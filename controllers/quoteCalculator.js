@@ -5,7 +5,7 @@
 //Might need to export the two functions?
 
 // returns a quote as int
-function calculateQuote(type, count, time) {
+const calculateQuote = (type, count, time) => {
   if (type && count && time) {
     // only two options photography and videography
     if (type.toUpperCase() == "PHOTOGRAPHY") {
@@ -19,7 +19,7 @@ function calculateQuote(type, count, time) {
 }
 
 // returns a range as array
-function calculateRange(type, count, time) {
+const calculateRange = (type, count, time) => {
   if (type && count && time) {
     if (type.toUpperCase == "PHOTOGRAPHY") {
       return [200 * time, 200 * time + 40 * count * time + 750];
@@ -32,6 +32,6 @@ function calculateRange(type, count, time) {
 }
 
 module.exports = {
-  calculateQuote,
-  calculateRange,
-};
+ calculateQuote,
+ calculateRange
+}

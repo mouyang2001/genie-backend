@@ -2,8 +2,31 @@ const mongoClient = require("../models/mongoConnection");
 const mongo = require("mongodb");
 const { getAllTerms } = require("../models/awsComprehendModel");
 
-// need to require quoteCalculator.js then apply the function
-const quoteCalculator = require("./QuoteCalculator");
+const calculateQuote = (type, count, time) => {
+  if (type && count && time) {
+    // only two options photography and videography
+    if (type.toUpperCase() == "PHOTOGRAPHY") {
+      return 200 * time + 40 * count * time + 500;
+    } else {
+      return 200 * time + 50 * count * time + 800;
+    }
+  } else {
+    return 420;
+  }
+};
+
+// returns a range as array
+const calculateRange = (type, count, time) => {
+  if (type && count && time) {
+    if (type.toUpperCase == "PHOTOGRAPHY") {
+      return [200 * time, 200 * time + 40 * count * time + 750];
+    } else {
+      return [200 * time, 200 * time + 40 * count * time + 900];
+    }
+  } else {
+    return [0, 1000];
+  }
+};
 
 const saveChatbotInput = async (req, res, next) => {
   const clientCollection = mongoClient.db("teamregex").collection("clients");
@@ -30,13 +53,13 @@ const saveChatbotInput = async (req, res, next) => {
   };
 
   // apply quotedCalculator functions
-  clientInput.quoted = quoteCalculator.calculateQuote(
+  clientInput.quoted = calculateQuote(
     clientInput.service_type,
     parseInt(clientInput.staff_count),
     parseInt(clientInput.service_time)
   );
 
-  clientInput.budgetEstimate = quoteCalculator.calculateRange(
+  clientInput.budgetEstimate = calculateRange(
     clientInput.service_type,
     parseInt(clientInput.staff_count),
     parseInt(clientInput.service_time)
