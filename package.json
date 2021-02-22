@@ -1,0 +1,32 @@
+{
+  "name": "genie-backend",
+  "version": "1.0.0",
+  "description": "backend for genie app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mouyang2001/genie-backend.git"
+  },
+  "keywords": [
+    "genie",
+    "app",
+    "digital",
+    "backend"
+  ],
+  "author": "Matthew Ouyang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mouyang2001/genie-backend/issues"
+  },
+  "homepage": "https://github.com/mouyang2001/genie-backend#readme",
+  "dependencies": {
+    "aws-sdk": "^2.848.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.4"
+  }
+}
