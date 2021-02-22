@@ -3,7 +3,7 @@ const app = express();
 
 const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => {
-  console.log(`Running on http://localhost:${PORT}`);
+  console.log(`Running on port: ${PORT}`);
 });
 
 app.use(express.json());
