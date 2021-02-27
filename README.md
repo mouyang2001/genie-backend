@@ -1,6 +1,8 @@
 # genie-backend
 Backend service for Genie software package.
 
+Link to frontend repo: https://github.com/mouyang2001/genie-frontend
+
 # Api Link
 https://genie-app-backend.herokuapp.com
 
