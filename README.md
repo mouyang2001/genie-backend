@@ -1,6 +1,9 @@
 # genie-backend
 Backend service for Genie software package.
 
+# Api Link
+https://genie-app-backend.herokuapp.com
+
 # About
 Genie is a concept software package that provides automated lead generation and client managment. It leverages AI technologies to help small businesses manage client requests and provide optimized quotes for potential customers based on their input data.
 
@@ -10,9 +13,5 @@ Side Note: This repo was split from the original repo: https://github.com/Ray-F/
 
 # Technologies
 Node js, Express, Mongodb and AWS comprehend. Hosted on heroku.
-
-# Api
-https://genie-app-backend.herokuapp.com
-
 
 Please contact mouyang2001@gmail.com for environment variables
